@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
             registroAlumno.put("telefono", telefono);
             baseDeDatos.insert("alumno", null, registroAlumno);
             Toast.makeText(this,"Guardado exitosamente", Toast.LENGTH_SHORT).show();
-
+            //COMENTARIOS PARA USO DE GIT
             this.etCarnet.setText("");
             this.etNombre.setText("");
             this.etCorreo.setText("");
