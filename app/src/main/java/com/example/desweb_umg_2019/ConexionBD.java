@@ -21,7 +21,7 @@ public class ConexionBD extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+    public void onUpgrade(SQLiteDatabase baseDeDatos, int oldVersion, int newVersion) {
+        baseDeDatos.execSQL("CREATE TABLE alumno(carne int primary key, nombre text, correo text, telefono text)");
     }
 }

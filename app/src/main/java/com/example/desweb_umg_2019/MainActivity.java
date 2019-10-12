@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText etCarnet, etNombre, etCorreo;
+    EditText etCarnet, etNombre, etCorreo, etTelefono;
     Button btnGuardar;
 
     @Override
@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         etCarnet = findViewById(R.id.txtCarne);
         etNombre = findViewById(R.id.txtNombre);
         etCorreo = findViewById(R.id.txtCorreo);
+        etTelefono = findViewById(R.id.txtTelefono);
         btnGuardar = findViewById(R.id.btnGuardar);
 
     }
@@ -29,18 +30,20 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void registrarAlumno(){
-        ConexionBD conexion = new ConexionBD( this, "bd_alumnos", null, 1);
+        ConexionBD conexion = new ConexionBD( this, "bd_alumnos", null, 2);
         SQLiteDatabase baseDeDatos = conexion.getWritableDatabase();
 
         String carne = this.etCarnet.getText().toString();
         String nombre = this.etNombre.getText().toString();
         String correo = this.etCorreo.getText().toString();
+        String telefono = this.etTelefono.getText().toString();
 
         if(!carne.isEmpty()&& !nombre.isEmpty() && !correo.isEmpty()){
             ContentValues registroAlumno = new ContentValues();
             registroAlumno.put("carne", carne);
             registroAlumno.put("nombre", nombre);
             registroAlumno.put("correo", correo);
+            registroAlumno.put("telefono", telefono);
             baseDeDatos.insert("alumno", null, registroAlumno);
             Toast.makeText(this,"Guardado exitosamente", Toast.LENGTH_SHORT).show();
 

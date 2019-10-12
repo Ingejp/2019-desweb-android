@@ -46,10 +46,19 @@
             android:hint="Ingrese Correo"
             android:inputType="textPersonName" />
 
+        <EditText
+            android:id="@+id/txtTelefono"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Ingrese Telefono"
+            android:inputType="textPersonName" />
+
         <Button
             android:id="@+id/btnGuardar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Guardar Registros" />
+            android:text="Guardar" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
